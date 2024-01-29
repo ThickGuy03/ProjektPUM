@@ -49,6 +49,7 @@ import androidx.navigation.navArgument
 import androidx.navigation.NavType
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.example.projectpum.ui.theme.Purple80
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -225,7 +226,6 @@ fun MainScreen(navController: NavHostController) {
     var cardTexts by remember { mutableStateOf<List<String>>(emptyList()) }
     val context: Context = LocalContext.current
 
-    // Load text from file
     LaunchedEffect(key1 = numberOfCards) {
         val fileName = "data3.txt"
         try {
@@ -269,7 +269,7 @@ fun MainScreen(navController: NavHostController) {
                     Column(
                         modifier = Modifier
                             .fillMaxWidth()
-                            .background(Color(0xFFD4E6F1)) // ARGB
+                            .background(Purple80)
                     ) {
                         Text(
                             modifier = Modifier
@@ -330,7 +330,6 @@ fun SecondScreen(navController: NavHostController) {
             text = "Dodaj Notatke",
             fontSize = 26.sp
         )
-        //TEXT FIELDS
         TextField(
             modifier = Modifier
                 .padding(10.dp)
